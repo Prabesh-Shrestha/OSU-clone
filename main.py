@@ -3,14 +3,13 @@ import sys
 import random
 import math
 import time
-
+import config
 
 pygame.init()
 pygame.mixer.init()
-pygame.mixer.music.load("songs/clear
-Fromtheedge.wav")
-pygame.mixer.music.set_volume(0.7)
-speed = 0.4
+pygame.mixer.music.load(config.musicfile)
+pygame.mixer.music.set_volume(config.volume)
+speed = config.speed
 score = 0
 win_x = 600
 win_y = 500
@@ -99,6 +98,6 @@ while gameloop:
         circle_exists = False
         score -=10
     print(score)
-    speed+= 0.0000001
+    speed+= config.difficulty
     pygame.display.update()
     clock.tick(120)
