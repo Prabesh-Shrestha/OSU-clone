@@ -96,7 +96,8 @@ while gameloop:
     tempr -= speed
     if tempr < 50:
         circle_exists = False
-        score -=10
+        if score != 0:
+            score -=10
     print(score)
     speed+= config.difficulty
     pygame.display.update()
